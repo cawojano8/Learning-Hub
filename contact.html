@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - Learning Hub</title>
 <link rel="stylesheet" href="style.css">
+<style>
+    /* Optional inline CSS for error/success visibility */
+    .error { color: red; }
+    .success { color: green; }
+</style>
 </head>
 <body>
 <header>
@@ -20,7 +25,8 @@
 </nav>
 
 <main class="form-main">
-    <form id="contactForm">
+    <!-- Call validation on submit -->
+    <form id="contactForm" onsubmit="return validateContactForm()">
         <input type="text" id="contactName" placeholder="Your Name">
         <input type="email" id="contactEmail" placeholder="Your Email">
         <textarea id="contactMessage" placeholder="Your Message"></textarea>
@@ -30,6 +36,32 @@
     </form>
 </main>
 
-<script src="main.js"></script>
+<script>
+function validateContactForm() {
+    const name = document.getElementById('contactName').value.trim();
+    const error = document.getElementById('contactError');
+    const success = document.getElementById('contactSuccess');
+
+    // Clear previous messages
+    error.textContent = '';
+    success.textContent = '';
+
+    // Check if name is empty
+    if(name === '') {
+        error.textContent = 'Name is required.';
+        return false; // stop form submission
+    }
+
+    // Check if name contains numbers
+    if(/\d/.test(name)) {
+        error.textContent = 'Name cannot contain numbers.';
+        return false; // stop form submission
+    }
+
+    // Success message
+    success.textContent = 'Form submitted successfully!';
+    return false; // stop actual submission for demo
+}
+</script>
 </body>
 </html>
