@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses - Learning Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Courses</h1>
+</header>
+
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="login.html">Login</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<main class="courses-main">
+    <section class="course-list">
+        <div class="course-card">
+            <h3>Fullstack Web Development</h3>
+            <p>HTML, CSS, JavaScript, React, Node.js</p>
+            <button onclick="enrollCourse('Fullstack Web Development')">Enroll</button>
+        </div>
+        <div class="course-card">
+            <h3>Python for Data Science</h3>
+            <p>Pandas, NumPy, Matplotlib, Machine Learning</p>
+            <button onclick="enrollCourse('Python for Data Science')">Enroll</button>
+        </div>
+        <div class="course-card">
+            <h3>UI/UX Design Fundamentals</h3>
+            <p>Wireframes, Prototypes, User Research</p>
+            <button onclick="enrollCourse('UI/UX Design Fundamentals')">Enroll</button>
+        </div>
+    </section>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
